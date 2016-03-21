@@ -12,4 +12,5 @@ exports.init = function(server) {
   require('./routes/suppliers')(server);
   require('./routes/supplierGroup')(server);
   require('./routes/customerGroup')(server);
+  require('./routes/defaults')(server);
  };
