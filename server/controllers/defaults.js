@@ -17,7 +17,7 @@ var createTenats = function(tenants, current, number, callback) {
     var tenantdata = new Tenants(tenant);
     tenantdata.save(function(err, result) {
       if (err) {
-        callback(null, null);
+        callback(err, null);
       } else {
         createTenats(tenants.concat(result), current + 1, number, callback);
       }
@@ -36,7 +36,7 @@ var createCustomerGroup = function(customergroups, current, number, callback) {
       if (err) {
         callback(err, null);
       } else {
-        createTenats(customergroups.concat(result), current + 1, number, callback);
+        createCustomerGroup(customergroups.concat(result), current + 1, number, callback);
       }
     });
   } else {
