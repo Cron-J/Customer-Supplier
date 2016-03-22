@@ -19,7 +19,7 @@ exports.create = function(server) {
 
     server.route({
         method: 'POST',
-        path: '/defaults/{numbers}',
+        path: '/defaults/{tenantsnumber}/{customergroupnumber}/{suppliergroupnumber}',
         config: {
             handler: DefaultsController.Create
         }
